@@ -109,20 +109,20 @@ class student : public person
 {
 private:
 	int stuID;
-	string clas;
+	string lop;
 	student* next;
 
 public:
 	student(int _id = 0, string _name = "unknown", string _gender = "unknown", person* _next = NULL, int _stuID = 0, string _clas = "unknown", student* next = NULL) : person(_id, _name, _gender, _next)
 	{
 		stuID = _stuID;
-		clas = _clas;
+		lop = _clas;
 		this->next = next;
 	}
 	student(const student& stu1) : person(stu1)
 	{
 		stuID = stu1.stuID;
-		clas = stu1.clas;
+		lop = stu1.lop;
 	}
 	void input_stud(int& id, string& name, string& gender, int& stuID, string& clas)
 	{
@@ -134,13 +134,13 @@ public:
 		getline(cin, clas);
 		cout << "\n";
 		this->stuID = stuID;
-		this->clas = clas;
+		this->lop = clas;
 	}
 	void display()
 	{
 		person::display();
 		cout << "student ID:\t" << stuID << endl;
-		cout << "Class:\t" << clas << endl;
+		cout << "Class:\t" << lop << endl;
 	}
 };
 
@@ -149,11 +149,11 @@ public:
 int main()
 {
 	int id, stuID;
-	string name, gender, clas;
+	string name, gender, lop;
 	List <student> los;
 	student std1(1, "Nguyen Huu Binh", "female", NULL, 1, "ET1");
 	student std2(2, "Le Thi Lan", "female", NULL, 2, "ET1");
-	student std3; std3.input_stud(id, name, gender, stuID, clas);
+	student std3; std3.input_stud(id, name, gender, stuID, lop);
 	los.Add(std1);
 	los.Add(std2);
 	los.Add(std3);
